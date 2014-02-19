@@ -1,0 +1,37 @@
+#! /bin/bash
+
+RXE_TARGET="BRO_client.rxe"
+#BT_SERVER="BROFist"
+BT_SERVER="/home/ubuntu/NXT/brofist/src/BROFist"
+
+echo "Reading brick MAC address..."
+NXT_ID=$( NeXTTool /COM=usb -deviceinfo | grep Address | cut -f 2 -d =)
+
+if [ "$NXT_ID" == "" ]
+then
+	echo "No brick found, is it connected to USB and turned on?"
+	exit 1
+fi 
+echo "MAC: $NXT_ID"
+
+CHECK_FILE=$(NeXTTool /COM=usb -listfiles | grep $RXE_TARGET)
+if [ "$CHECK_FILE" == "" ]
+then
+	echo "$RXE_TARGET not found on the brick! Downloading.."
+	download_bt_client
+	echo "Please wait..."
+	sleep 4
+fi 
+
+echo "Starting BT client on the brick..."
+NeXTTool /COM=usb -run=$RXE_TARGET
+echo ""
+echo ""
+echo "Please wait before RUN> (right arrow) the software on the brick!"
+sleep 6
+echo "Starting BT server..."
+echo "Bluetooth PIN may be asked, just enter \"1234\""
+echo "Once connected, [BT] text should appear in the brick screen"
+$BT_SERVER -m $NXT_ID
+
+

@@ -1,0 +1,20 @@
+INSTALLATION
+- Make a Backup of your NXT directory
+- Copy and Paste my NXT directory over yours, overwrite your own data
+
+USAGE
+- Launch LEGO NXT TERMINAL
+- Type do_test.sh and follow the instructions
+
+NOTE:
+The script <split_test_data_into_pieces.sh> can be used to split the collected data into chunks,
+each file will contain a single test.
+
+In University the WIFI imposes a lot of NOISE over the BLUETOOTH communication, you may experience
+corrupted data if you do your tests there. At the same time, the BLUETOOTH may hang sometimes, in such cases you should restart your experiment. Check the data collected so far to verify if you can avoid starting from scratch. A good approach is to avoid trying to instruct the program to do 1000 tests and go to sleep, but use - let's say - 250 tests for session.
+
+If the script doesn't see your Brick - and the brick it's connected - then you should restart the Virtual Box Machine.
+
+
+For problems, contact the author:
+patrick.trentin.88@gmail.com

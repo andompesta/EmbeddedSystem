@@ -1,0 +1,46 @@
+\select@language {english}
+\contentsline {figure}{\numberline {1}{\ignorespaces SOS Response}}{2}
+\contentsline {figure}{\numberline {2}{\ignorespaces Butterworth Filter}}{4}
+\contentsline {figure}{\numberline {3}{\ignorespaces The response of the system: raw instantaneous speed (blue), filtered signal (red), sos model response for current experiment (black), best sos model response (green)}}{7}
+\contentsline {figure}{\numberline {4}{\ignorespaces Evolution of steady state value at increasing power}}{8}
+\contentsline {figure}{\numberline {5}{\ignorespaces Evolution of the Gain value at increasing power}}{9}
+\contentsline {figure}{\numberline {6}{\ignorespaces Evolution of damping factor value at increasing power}}{9}
+\contentsline {figure}{\numberline {7}{\ignorespaces Evolution of natural frequency value at increasing power}}{10}
+\contentsline {figure}{\numberline {8}{\ignorespaces Bode Plot}}{10}
+\contentsline {figure}{\numberline {9}{\ignorespaces The response of the system: raw instantaneous speed (blue), filtered signal (red), reconstructed response signal (black) and best SOS model (green).}}{12}
+\contentsline {figure}{\numberline {10}{\ignorespaces Bode Plot}}{13}
+\contentsline {figure}{\numberline {11}{\ignorespaces SOSModel}}{15}
+\contentsline {figure}{\numberline {12}{\ignorespaces Acceptance Region}}{17}
+\contentsline {figure}{\numberline {13}{\ignorespaces Root Locus}}{18}
+\contentsline {figure}{\numberline {14}{\ignorespaces Continuous time model}}{19}
+\contentsline {figure}{\numberline {15}{\ignorespaces Simulation in Continuous time}}{20}
+\contentsline {figure}{\numberline {16}{\ignorespaces Simulation in Continuous time}}{20}
+\contentsline {figure}{\numberline {18}{\ignorespaces Simulation in Discrete time}}{21}
+\contentsline {figure}{\numberline {17}{\ignorespaces Discrete time model}}{22}
+\contentsline {figure}{\numberline {19}{\ignorespaces Simulation in Discrete time}}{23}
+\contentsline {figure}{\numberline {20}{\ignorespaces Simulation in Discrete time}}{23}
+\contentsline {figure}{\numberline {21}{\ignorespaces }}{26}
+\contentsline {figure}{\numberline {22}{\ignorespaces }}{26}
+\contentsline {figure}{\numberline {23}{\ignorespaces }}{27}
+\contentsline {figure}{\numberline {24}{\ignorespaces }}{28}
+\contentsline {figure}{\numberline {25}{\ignorespaces }}{28}
+\contentsline {figure}{\numberline {26}{\ignorespaces SOSModel}}{29}
+\contentsline {figure}{\numberline {27}{\ignorespaces SOSModel}}{31}
+\contentsline {figure}{\numberline {28}{\ignorespaces SOSModel}}{31}
+\contentsline {figure}{\numberline {29}{\ignorespaces SOSModel}}{32}
+\contentsline {figure}{\numberline {30}{\ignorespaces SOSModel}}{32}
+\contentsline {figure}{\numberline {31}{\ignorespaces SOSModel}}{33}
+\contentsline {figure}{\numberline {32}{\ignorespaces SOSModel}}{33}
+\contentsline {figure}{\numberline {33}{\ignorespaces SOSModel}}{34}
+\contentsline {figure}{\numberline {34}{\ignorespaces Unicycle Model}}{35}
+\contentsline {figure}{\numberline {35}{\ignorespaces Unicycle Model}}{35}
+\contentsline {figure}{\numberline {36}{\ignorespaces Trigonometry}}{38}
+\contentsline {figure}{\numberline {37}{\ignorespaces }}{40}
+\contentsline {figure}{\numberline {38}{\ignorespaces }}{40}
+\contentsline {figure}{\numberline {39}{\ignorespaces }}{41}
+\contentsline {figure}{\numberline {40}{\ignorespaces }}{41}
+\contentsline {figure}{\numberline {41}{\ignorespaces }}{42}
+\contentsline {figure}{\numberline {42}{\ignorespaces }}{43}
+\contentsline {figure}{\numberline {43}{\ignorespaces }}{44}
+\contentsline {figure}{\numberline {44}{\ignorespaces Trigonometry}}{45}
+\contentsline {figure}{\numberline {45}{\ignorespaces Trigonometry}}{48}

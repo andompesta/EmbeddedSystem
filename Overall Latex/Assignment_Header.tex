@@ -1,0 +1,179 @@
+\documentclass[12pt, a4paper, openany]{article}
+%\documentclass[12pt,a4paper,openany,titlepage]{report}
+
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{url}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{newclude}
+\usepackage{float}
+\usepackage{listings}
+%\usepackage[toc,page]{appendix}
+
+%\usepackage{hyperref}
+% Pacchetti per poter scrivere con la tastiera italiana
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} %Aumenta la resa dei caratteri quando si stampa
+
+% Pacchetto per scrivere in italiano
+\usepackage[english]{babel}
+
+% Pacchetti matematici vari
+% Pacchetti base
+
+\usepackage{makeidx} % Pacchetto per l'indice analitico
+\usepackage{mparhack} % Pacchetto che corregge alcuni errori nei magini della pagina 
+\usepackage{marginnote} % Pacchetto che permette di scrivere note a margine 
+\usepackage{listings} % Pacchetto necessario per scrivere codice sorgente 
+\usepackage{braket} % Pacchetto che permette di scrivere tutte le parentesi
+\usepackage{csquotes}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{cite}
+\usepackage[english]{varioref}
+
+\usepackage[letterpaper]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\geometry{top=1.0in, bottom=1.0in, left=1.0in, right=1.0in}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{blue},
+  commentstyle=\itshape\color{green},
+  identifierstyle=\color{black},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  frame=L,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+}
+
+\lstset{escapechar=@,style=customc}
+
+\begin{document}
+
+
+
+
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+%\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+\newcommand{\LEGOMOTOR}{\emph{LEGO NXT MOTOR}}
+\newcommand{\SOS}{\emph{Second Order System}}
+\newcommand{\CL}{\emph{Closed Loop System}}
+\newcommand{\UV}{\emph{Unicycle Vehicle}}
+\newcommand{\KM}{\emph{Kinematic Model}}
+
+\newcommand{\chapter}[1]{\section{#1}}
+
+% ----------------------------------------------------------------------------
+% Start the document
+%
+  \begin{titlepage}
+    \centering
+
+     \begin{figure}[ht]
+       \centering
+       \includegraphics[angle=-90, keepaspectratio=true, width=8cm]{logo.png}
+     \end{figure}
+
+     {
+     \large \bfseries Laboratory of Embedded Control Systems\par
+     	 2012-2013
+     }\par
+
+     % ------------------------------------------------------------------------
+     % Set the title, author, and date
+     % 
+
+     \vspace{1.5cm}
+     {
+     \Large \bfseries \textcolor{blue}{LEGO NXT \\Unicycle Vehicle} \par
+     }
+     \vspace{1.0cm}
+%     {
+%     \large \bfseries {Group N. 0} \par
+%     }
+     \vspace{0.3cm}
+     { \bfseries {Cavallari Sandro,\\ Sottovia Paolo,\\
+      Trentin Patrick}}
+
+     \vspace{1.5cm}
+
+\begin{abstract}
+Nowadays, one of the most trendy and intriguing aspects of applied computer science is the widespread diffusion of embedded systems in all sort of increasingly sophisticated devices. Day after day hardware components such as actuators, sensors and micro-controllers become cheaper and cheaper, while the internet provided the means for ease knowledge exchange and development through new form of communities and social interaction. These trends are giving rise to a paradigmatic shift in the customer mindset, which is not only increasingly aware of the benefits of a richer technological living experience, but also demanding for a more pervasive and creative applications that may improve his lifestyle.
+
+It is therefore important to gather at least surface level knowledge of the instruments that allow to start facing this new market. The main goal of this report is exactly this: provide the basics of automated controls and embedded development by solving a simple task like following a wall surface at a certain distance within established satisfying performance parameters. In other words, the aim of this project is to develop a simple unicycle vehicle that follows a straight line.
+
+To reach this goal we will use as hardware components the \textit{LEGO NXT Kit}, provided by the University of Trento, programmed using \textit{LEJOS OSEK} libraries and we will mainly rely on \textit{ScicosLab} and \textit{Scicos} for all the part of design and digital simulation.
+
+This report is divided into three main sections: the first one is devoted to identifying the Second Order System parameters underlying the dynamic of the \LEGOMOTOR{} by means of a sequence of experiments, the second part aims to design and implement a controller for the wheel that is proven to respect certain requirements and the last part will design a controller for the entire vehicle and glue together all components. 
+\end{abstract}
+
+\end{titlepage}
+
+%\thispagestyle{empty}
+\cleardoublepage
+\pagenumbering{gobble}
+\tableofcontents
+%\cleardoublepage
+%\listoffigures
+\cleardoublepage
+\pagenumbering{arabic}
+
+\newpage
+\setcounter{page}{1}
+
+
+
+%%%
+\section{Assignment 1:\\ \LEGOMOTOR{} parameter identification}
+
+The \LEGOMOTOR{} is a closed technology, and as such it's internals are hidden to the user. In the first part of this report we will describe the experiments done in order to reconstruct a proper model for the Motor, which modelled as a Second Order System. The identification of a model for the \LEGOMOTOR{} can be done either in the Time Domain, by feeding the motor an input step function, or in the Frequency Domain, by using an input sinusoid function. We will cover both approaches and separately discuss the outcomes of our experimentations.
+
+\include*{Assignment_1}
+\newpage
+
+%%%
+\section{Assignment 2:\\ \LEGOMOTOR{} controller design and implementation}
+
+The second third of this report is devoted to the design of a Controller for the \LEGOMOTOR{} that respects a set of constraints defining the desired performances of the motor. After an initial review of the results obtained with the previous experimentation with the \LEGOMOTOR{}, we will use the \emph{Root Locus} technique, combined with \textit{Scicos} analogical and digital simulations, to lead the controller design phase up to acceptable performances. The controller will then be implemented on the \textit{LEGO brick} and its performances verified against the initial constraints.
+
+\include*{Assignment_2}
+\newpage
+
+
+\section{Assignment 3:\\ Unicycle Vehicle controller design and implementation}
+The goal of the third and last part of this report is to design and implement a controller that allows the robot built with \textit{LEGO NXT} to approach and follow a line using as reference the Unicycle Kinematic model. The first part of this report is a revision of the wheel controller design phase, followed by a brief explanation of the Unicycle Model. After that we go deeper into the details of the vehicle controller design and implementation, tackle some performance tuning issues and conclude by evaluating the overall performances of the robot in the real world environment.
+
+\include*{Assignment_3}
+\newpage
+
+
+\section{Conclusions}
+
+This laboratory experience provided us with a simple, but yet complete, methodical procedure to develop a functioning robot. Starting from the instruments that enabled us to model an actuator behaviour using standard mathematical notions, we were then given the basic notions needed to develop an controller with a feedback loop that guarantees the actuator matches the desired performances of the system. At last we developed further on these building blocks by studying how a kinematic behaviour can be formalized into a model and then linearised through a sequence of simplifications. At this point all the building blocks could be finally glued together to ``magically'' result in a fully functional Unicycle Robot that matches all our expectations.
+
+This experience has been particularly satisfactory and enjoying in all its phases, although it has been a displeasure that during the lectures there wasn't enough time to dedicate into investigating further and deeper more advanced techniques of the field. From our perspective the part that up to now is more affected by the lack of advanced techniques is the spatial localization of the vehicle, for which we had to apply some ad-hock hacks.
+
+One of the main problem that we found during the carrying out of the assignment is the instability of \emph{Scicoslab} application on Operating Systems other than Linux. In our perspective using a different programs can be easier and allow a faster execution of the exercise.
+\end{document}
